@@ -176,3 +176,30 @@ var trueArray = Array.prototype.slice.call(arrayLikeObject);
 ```
 var divs = Array.prototype.slice.call(document.querySelectorAll("div"));
 ```
+##### 2. 使用展开语法（Spread syntax）
+展开语法可以在函数调用/数组构造时，将数组表达式或者string在语法层面展开；还可以在构造字面量对象时，将对象表达式按key-value的方式展开。
+ES6可以支持这种语法：
+```
+var trueArray = [...iterableObject];
+```
+上例中，如果我们想将NodeList转换为真正的数组，使用展开语法可以这样写：
+```
+var divs = [...document.querySelectorAll("div")];
+```
+##### 3. 使用Array.from
+Array.from （在ES2015+支持，但是很容易实现垫片）从类数组对象创建一个真实数组，可以通过映射函数传递数组条目。如下：
+```
+var divs = Array.from(document.querySelectorAll("div"));
+```
+如果想获得具有某种类型的元素的标记名称的数组，则可以使用映射函数：
+```
+// Arrow function (ES2015):
+var divs = Array.from(document.querySelectorAll(".some-class"), element => element.tagName);
+
+// Standard function (since `Array.from` can be shimmed):
+var divs = Array.from(document.querySelectorAll(".some-class"), function(element) {
+    return element.tagName;
+});
+```
+
+
