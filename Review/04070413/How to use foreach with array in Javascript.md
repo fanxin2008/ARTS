@@ -2,9 +2,7 @@
 ##### [How ca I loop through all the entires in an array using Javascript?](https://stackoverflow.com/questions/9329446/how-to-use-foreach-with-array-in-javascript?page=1&tab=votes#tab-top)
 
 *该文选自Stack Overflow问题的回答*
-
-###*最重要的提示*
-
+### *最重要的提示*
 * 不要使用```for-in```，除非该对象有明确的边界，或者很清楚它的优缺点
 * 推荐的用法如下：
 > * ```for-of``` 循环（ES2015及以上支持）
